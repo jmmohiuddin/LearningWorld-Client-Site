@@ -1,0 +1,22 @@
+.bookingContainer {
+  width: 60%;
+  border: 1px solid gray;
+  margin-top: 150px;
+}
+
+.costContainer {
+  border: 1px solid gray;
+}
+
+.bookDetailsContainer h4 {
+  margin-right: 278px;
+}
+
+.bookDetailsContainer input {
+  border: none;
+  outline-style: none;
+}
+
+.submit {
+  margin-left: 17px;
+}
