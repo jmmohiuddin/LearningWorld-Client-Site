@@ -9,9 +9,7 @@ import Book from "./components/Book/Book";
 import Header from "./components/Header/Header";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Orders from "./components/Orders/Orders";
-
 export const UserContext = createContext();
-
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (

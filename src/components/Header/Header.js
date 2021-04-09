@@ -307,7 +307,7 @@ const Header = () => {
               </Typography>
               <div className={classes.search}>
                 <div className={classes.searchIcon}>
-                  <SearchIcon />
+                  <SearchIcon className="headerSearch" />
                 </div>
 
                 <InputBase
@@ -317,6 +317,7 @@ const Header = () => {
                     input: classes.inputInput,
                   }}
                   inputProps={{ "aria-label": "search" }}
+                  className="headerSearch"
                 />
               </div>
               <div className={classes.grow} />
@@ -383,10 +384,60 @@ const Header = () => {
           </div>
           <Divider />
           <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+            {[" "].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                  <nav>
+                    <Link to="/home" className="login">
+                      COMPITION
+                    </Link>
+                  </nav>
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+          <List>
+            {[" "].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>
+                  {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                  <nav>
+                    <Link to="/Admin" className="login">
+                      ADMIN
+                    </Link>
+                  </nav>
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+          <List>
+            {[" "].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>
+                  {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                  <nav>
+                    <Link to="/Orders" className="login">
+                      Orders
+                    </Link>
+                  </nav>
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+          <List>
+            {[" "].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>
+                  {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                  <nav>
+                    <Link to="/addBook" className="login">
+                      ADDBOOK
+                    </Link>
+                  </nav>
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>

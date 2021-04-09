@@ -23,7 +23,7 @@ const Event = ({ book }) => {
         <div className=" col-3">
           <button
             onClick={() => deleteEvent(book._id)}
-            className="btn btn-primary"
+            className="btn btn-primary mb-2"
           >
             Delete
           </button>

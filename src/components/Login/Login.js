@@ -3,6 +3,11 @@ import "./Login.css";
 import { UserContext } from "../../App";
 import { useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+
+import image1 from "../../images/image1.jpg";
+import image2 from "../../images/image2.jpg";
+import image3 from "../../images/image3.jpg";
+import logo from "../../images/logo.png";
 import {
   handleGoogleSignIn,
   intializeLoginFramework,
@@ -93,103 +98,119 @@ function Login() {
   };
   return (
     <>
-      <section
-        className=" container-md text-center loginAndSignUp mt-5"
-        id="main"
-      >
-        <div className=" container-md mt-5" id="main">
-          {newUser ? <h1>Create an account</h1> : <h1>Login</h1>}
-          <form onSubmit={handleSubmit}>
-            {newUser && (
+      <img src={logo} alt="" className="logo" />
+      <section className="container-md LoginSection">
+        <section className="row">
+          <div
+            className=" mt-5 LoginSectionForm d-block"
+            id="main col-sm-12 col-md-6"
+          >
+            {newUser ? (
+              <h1 className="LoginSectionTitle">Create an account</h1>
+            ) : (
+              <h1 className="LoginSectionTitle">Login</h1>
+            )}
+            <br />
+            <form onSubmit={handleSubmit}>
+              {newUser && (
+                <input
+                  type="text"
+                  onBlur={handleBlur}
+                  placeholder="Your name"
+                  required
+                  name="name"
+                  className="mb-2"
+                />
+              )}
+              <br />
               <input
                 type="text"
                 onBlur={handleBlur}
-                placeholder="Your name"
+                placeholder="Your email address"
                 required
-                name="name"
+                name="email"
+                className="mb-3"
               />
-            )}
-            <br />
-            <input
-              type="text"
-              onBlur={handleBlur}
-              placeholder="Your email address"
-              required
-              name="email"
-            />
-            <br />
-            <input
-              type="password"
-              id="txtPassword"
-              onBlur={handleBlur}
-              name="password"
-              placeholder="Your password"
-              required
-            />
-            <br />
-            {newUser && (
+              <br />
               <input
-                id="txtConfirmPassword"
                 type="password"
+                id="txtPassword"
                 onBlur={handleBlur}
-                placeholder="Confirm password"
+                name="password"
+                placeholder="Your password"
                 required
-                name="Confirmpassword"
+                className="mb-2"
               />
-            )}
-            <br />
-            <p>
-              <input type="checkbox" name="newUser" id="" />
-              Remember Me
-            </p>
-            <br />
-            <input
-              type="submit"
-              value={newUser ? "sign up" : "sign in"}
-              className="signupSignInBtn"
-            />
-            <br />
-            {newUser ? (
-              <p></p>
-            ) : (
-              <b className="d-inline-block">
-                Dont have an account?
-                <p
-                  onClick={() => setNewUser(!newUser)}
-                  className="d-inline-block text-danger"
-                  style={{ cursor: "pointer" }}
-                >
-                  Create an account
+              <br />
+              {newUser && (
+                <input
+                  id="txtConfirmPassword"
+                  type="password"
+                  onBlur={handleBlur}
+                  placeholder="Confirm password"
+                  required
+                  name="Confirmpassword "
+                  className="mb-2"
+                />
+              )}
+              <br />
+              <p>
+                <input type="checkbox" name="newUser" id="" />
+                Remember Me
+              </p>
+              <br />
+              <input
+                id="submit"
+                type="submit"
+                value={newUser ? "sign up" : "sign in"}
+                className="signupSignInBtn mb-3"
+              />
+              <br />
+              {newUser ? (
+                <p></p>
+              ) : (
+                <p className="createAccount">
+                  Dont have an account?
+                  <p
+                    onClick={() => setNewUser(!newUser)}
+                    className="text-danger createAccount"
+                    style={{ cursor: "pointer" }}
+                  >
+                    Create an account
+                  </p>
                 </p>
-              </b>
+              )}
+            </form>
+            <p style={{ color: "red" }}>{user.error}</p>
+            {user.success && (
+              <p style={{ color: "green" }}>
+                User {newUser ? "created" : "login"} successfully
+              </p>
             )}
-          </form>
-          <p style={{ color: "red" }}>{user.error}</p>
-          {user.success && (
-            <p style={{ color: "green" }}>
-              User {newUser ? "created" : "login"} successfully
-            </p>
-          )}
-        </div>
+            <div className="mt-5 ">
+              {user.isSignIn ? (
+                <button onClick={signOut}>
+                  <FontAwesomeIcon icon={faGoogle} />
+                  sign out
+                </button>
+              ) : (
+                <button onClick={googleSignIn} className="gBtn">
+                  <FontAwesomeIcon icon={faGoogle} />
+                  sign in With Google
+                </button>
+              )}
+              <br />
+              <button onClick={fbSignIn} className="fbBtn">
+                <FontAwesomeIcon icon={faFacebookSquare} />
+                Sign in using Facebook{" "}
+              </button>
+            </div>
+          </div>
+          <div className="LoginSectionImage col-sm-12 col-md-6 container-md">
+            <img src={image3} alt=""></img>
+          </div>
+        </section>
       </section>
-      <div className="text-center mt-5 GoogleFbSignIn">
-        {user.isSignIn ? (
-          <button onClick={signOut}>
-            <FontAwesomeIcon icon={faGoogle} />
-            sign out
-          </button>
-        ) : (
-          <button onClick={googleSignIn}>
-            <FontAwesomeIcon icon={faGoogle} />
-            sign in With Google
-          </button>
-        )}
-        <br />
-        <button onClick={fbSignIn}>
-          <FontAwesomeIcon icon={faFacebookSquare} />
-          Sign in using Facebook{" "}
-        </button>
-      </div>
     </>
   );
 }

@@ -67,17 +67,11 @@ const AddBook = () => {
             ref={register({ required: true })}
           />
           <br />
-          <input
-            className="col-6"
-            name="exampleRequired"
-            type="file"
-            onChange={handleImageUpload}
-          />
         </div>
         <br />
         <input
           type="submit"
-          className=" btn btn-primary pl-4 pt-2 pb-2 pr-4"
+          className=" btn btn-primary pl-5 pt-2 pb-2 pr-5"
           value="Save"
         />
       </form>

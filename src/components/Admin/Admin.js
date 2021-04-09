@@ -12,17 +12,17 @@ const Admin = () => {
   }, []);
   return (
     <>
-      <Link to="/addBook" className="addMin mt-5 d-inline-block">
+      {/* <Link to="/addBook" className="addMin mt-5 d-inline-block">
         Add Product
       </Link>
       <br />
       <Link to="/Admin" className="addMin mt-5 d-inline-block">
         Manage books
-      </Link>
-      <section className="container-md">
+      </Link> */}
+      <section className="container-md Orders mt-5">
         <br />
         <br />
-        <div className="row container-md">
+        <div className="row container-md OrdersTitle">
           <div className=" col-3">
             <b>
               <h5>Book Name</h5>
@@ -46,7 +46,7 @@ const Admin = () => {
         </div>
         <br />
         <br />
-        <div className="row">
+        <div className="row ">
           {events.length === 0 && (
             <CircularProgress className="text-center mt-5" />
           )}

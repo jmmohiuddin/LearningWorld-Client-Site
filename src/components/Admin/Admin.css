@@ -12,3 +12,16 @@
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
 }
+.Orders{
+        border: 1px solid gray;
+        background-color: gray;
+        padding:25px,50px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+}
+.OrdersTitle {
+        background-color: rgb(124, 230, 75);
+}

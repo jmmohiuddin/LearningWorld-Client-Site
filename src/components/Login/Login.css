@@ -3,82 +3,77 @@
   padding: 0;
   box-sizing: border-box;
 }
-.loginAndSignUp {
+/* .loginAndSignUp {
   display: flex;
   border: 2px solid black;
   width: 500px !important;
   padding: 30px;
-}
+} */
 
-@media only screen and (min-width: 900px) {
-  .loginAndSignUp {
-    display: flex;
-    border: 2px solid black;
-    width: 500px !important;
-    padding: 30px;
+
+
+
+@media only screen and (max-width: 500px) {
+  .LoginSectionImage img {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .logo {
+    width: 100px;
+    margin-left: 25px!important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .gBtn {
+     padding: 20px 20px 20px 20px !important;
+     border-radius:8px;
+     font-size: 16px !important;
+     -webkit-border-radius:8px;
+     -moz-border-radius:8px;
+     -ms-border-radius:8px;
+     -o-border-radius:8px;
+     width: 185%;
+}
+}
+@media only screen and (max-width: 500px) {
+  .fbBtn {
+     padding: 20px 20px 20px 20px !important;
+     border-radius:8px;
+     font-size: 16px!important ;
+     width: 185%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #submit {
+     padding: 6px 20px 20px 20px;
+     border-radius:8px;
+     font-size: 16px;
+     width:185%;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  .loginAndSignUp {
-    display: flex;
-    border: 2px solid black;
-    width: 250px !important;
-    padding: 15px;
+  .LoginSectionForm {
+    width: 100%;
+    display:flex;
+    margin-left: 20px;
   }
 }
-
 @media only screen and (max-width: 500px) {
-  .loginAndSignUp {
-    display: flex;
-    border: 2px solid black;
-    width: 250px !important;
-    padding: 15px;
+  .LoginSection h1 {
+   font-size: 20px !important;
+   font-weight: 900;
+   width: 300px !important;
   }
 }
-
-@media only screen and (min-width: 900px) {
-  .loginAndSignUp input {
-    margin-top: 10px;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-  }
-}
-
 @media only screen and (max-width: 500px) {
-  .loginAndSignUp .signupSignInBtn {
-    border: none !important;
-    padding-left: 50px;
-    padding-right: 59px;
-    margin-bottom: 10px;
-    background-color: rgb(202, 236, 48);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+  .createAccount {
+   display: inline!important;
+   width: 100% !important;
   }
 }
 
-@media only screen and (min-width: 500px) {
-  .loginAndSignUp .signupSignInBtn {
-    border: none !important;
-    padding-left: 200px;
-    padding-right: 200px;
-    margin-bottom: 10px;
-    background-color: rgb(202, 236, 48);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-  }
-}
 
 .GoogleFbSignIn {}
 
@@ -88,4 +83,86 @@
 }
 #main {
   margin-top: 100px;
+}
+
+.LoginSection {
+  display:flex;
+  width: 100%;
+  
+}
+.LoginSectionForm {
+  display:flex;
+  width: 50%;
+}
+.LoginSectionTitle {
+font-size: 50px !important;
+letter-spacing: 5px;
+font-weight:900;
+}
+.LoginSectionForm input {
+padding: 20px 100px 20px 100px;
+ border-color: rgb(139, 216, 125);
+  border-radius:8px;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  -ms-border-radius:8px;
+  -o-border-radius:8px;
+  outline-style: none;
+}
+#submit{
+padding: 16px 145px 16px 145px;
+ background-color: rgb(103, 230, 80);
+ border-radius:8px;
+ -webkit-border-radius:8px;
+ -moz-border-radius:8px;
+ -ms-border-radius:8px;
+ -o-border-radius:8px;
+ outline-style: none;
+ border-color: rgb(139, 216, 125);
+ font-weight: 900;
+ font-size: 25px;
+
+}
+.LoginSectionImage {
+  display:flex;
+  width: 50%;
+}
+.LoginSectionImage img {
+ width: 720px;
+ height: 725px;
+}
+.gBtn {
+ padding: 16px 50px 20px 50px;
+ margin-bottom: 8px;
+  border-radius:8px;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  -ms-border-radius:8px;
+  -o-border-radius:8px;
+  outline-style: none;
+  border-color: rgb(139, 216, 125);
+ background-color: rgb(103, 230, 80);
+ font-weight: 900;
+ font-size: 25px;
+}
+.fbBtn {
+  padding: 16px 50px 20px 50px;
+   border-radius:8px;
+   -webkit-border-radius:8px;
+   -moz-border-radius:8px;
+   -ms-border-radius:8px;
+   -o-border-radius:8px;
+   outline-style: none;
+   border-color: rgb(139, 216, 125);
+ background-color: rgb(103, 230, 80);
+ font-weight: 900;
+ font-size: 25px;
+ padding: 15px 30px 15px 20px;
+ margin-bottom: 100px;
+ margin-top: 10px;
+}
+.logo{
+margin-left: 192px;
+margin-top: 20px;
+display: inline-block;
 }
