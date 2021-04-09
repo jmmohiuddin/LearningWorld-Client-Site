@@ -12,13 +12,6 @@ const Admin = () => {
   }, []);
   return (
     <>
-      {/* <Link to="/addBook" className="addMin mt-5 d-inline-block">
-        Add Product
-      </Link>
-      <br />
-      <Link to="/Admin" className="addMin mt-5 d-inline-block">
-        Manage books
-      </Link> */}
       <section className="container-md Orders mt-5">
         <br />
         <br />
@@ -48,7 +41,7 @@ const Admin = () => {
         <br />
         <div className="row ">
           {events.length === 0 && (
-            <CircularProgress className="text-center mt-5" />
+            <CircularProgress className="text-center mt-5 ml-5" />
           )}
           {events.map((book) => (
             <Event book={book}></Event>

@@ -22,7 +22,7 @@ const AddBook = () => {
 
   const handleImageUpload = (event) => {
     const imageData = new FormData();
-    imageData.set("key", "6cab7d7b5a429ce36568881d7a7f7081");
+    imageData.set("key", "03b008c33977f6a3ea82d4ba47c18173");
     imageData.append("image", event.target.files[0]);
 
     axios
@@ -55,23 +55,24 @@ const AddBook = () => {
         </div>
         <div className="row">
           <input
-            className="col-3 same-desgine"
+            className="col-6 same-desgine"
             name="cost"
             placeholder="price"
             ref={register({ required: true })}
           />
-          <input
-            className="col-3 same-desgine"
-            name="pdf"
-            type="file"
-            ref={register({ required: true })}
-          />
           <br />
+          <input
+            className="col-6"
+            name="exampleRequired"
+            type="file"
+            onChange={handleImageUpload}
+          />
         </div>
+
         <br />
         <input
           type="submit"
-          className=" btn btn-primary pl-5 pt-2 pb-2 pr-5"
+          className=" btn btn-primary pl-4 pt-2 pb-2 pr-4"
           value="Save"
         />
       </form>

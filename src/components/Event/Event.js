@@ -1,7 +1,7 @@
 import React from "react";
 const Event = ({ book }) => {
   const deleteEvent = (id) => {
-    fetch(`https://enigmatic-basin-74595.herokuapp.com/deleteEvent/${id}`, {
+    fetch(`https://quiet-springs-03889.herokuapp.com/deleteEvent/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
