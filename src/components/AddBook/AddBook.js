@@ -10,7 +10,7 @@ const AddBook = () => {
       imageURL: imageURL,
       AddEvents: data,
     };
-    const url = `http://localhost:5055/addEvent`;
+    const url = `https://quiet-springs-03889.herokuapp.com/addEvent`;
     fetch(url, {
       method: "POST",
       headers: {

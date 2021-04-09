@@ -4,7 +4,10 @@ const Orders = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [events, setEvents] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5055/orders?email=" + loggedInUser.email)
+    fetch(
+      "https://quiet-springs-03889.herokuapp.com/orders?email=" +
+        loggedInUser.email
+    )
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);

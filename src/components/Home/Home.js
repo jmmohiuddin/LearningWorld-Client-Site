@@ -6,7 +6,7 @@ import { CircularProgress } from "@material-ui/core";
 const Home = () => {
   const [book, setBook] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5055/events")
+    fetch("https://quiet-springs-03889.herokuapp.com/events")
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, []);

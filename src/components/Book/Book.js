@@ -15,7 +15,7 @@ const Book = () => {
       ...loggedInUser,
       orderTime: new Date(),
     };
-    fetch("http://localhost:5055/addOrder", {
+    fetch("https://quiet-springs-03889.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(orderDetails),
@@ -29,13 +29,16 @@ const Book = () => {
   };
   const [book, setBook] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5055/events")
+    fetch("https://quiet-springs-03889.herokuapp.com/events")
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, []);
   const books = book?.find((book) => book?._id === bookId);
   useEffect(() => {
-    fetch("http://localhost:5055/orders?email=" + loggedInUser.email)
+    fetch(
+      "https://quiet-springs-03889.herokuapp.com/orders?email=" +
+        loggedInUser.email
+    )
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);
