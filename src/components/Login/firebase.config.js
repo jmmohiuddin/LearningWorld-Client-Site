@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCyYjQPL9WxjYfs0AORP6THGZEqN9afjjw",
-  authDomain: "learning-world-18d36.firebaseapp.com",
-  projectId: "learning-world-18d36",
-  storageBucket: "learning-world-18d36.appspot.com",
-  messagingSenderId: "460901468799",
-  appId: "1:460901468799:web:b2fe78267faf8cb7d20d4a",
-  measurementId: "G-BM5766KQZ2",
+  apiKey: "AIzaSyDzhVznafjnct2HWF6t86Q_m5CDGAE6PtE",
+  authDomain: "learning-world-library.firebaseapp.com",
+  projectId: "learning-world-library",
+  storageBucket: "learning-world-library.appspot.com",
+  messagingSenderId: "682853894841",
+  appId: "1:682853894841:web:1afa76baf38df3dcbda968",
+  measurementId: "G-QKQ1985CMY",
 };
 export default firebaseConfig;

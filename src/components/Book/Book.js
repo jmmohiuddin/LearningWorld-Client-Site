@@ -39,7 +39,7 @@ const Book = () => {
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);
-
+  console.log(loggedInUser);
   return (
     <>
       {newUser ? (

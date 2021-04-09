@@ -93,8 +93,11 @@ function Login() {
   };
   return (
     <>
-      <section className=" container-md text-center loginAndSignUp mt-5">
-        <div className=" container-md mt-5">
+      <section
+        className=" container-md text-center loginAndSignUp mt-5"
+        id="main"
+      >
+        <div className=" container-md mt-5" id="main">
           {newUser ? <h1>Create an account</h1> : <h1>Login</h1>}
           <form onSubmit={handleSubmit}>
             {newUser && (

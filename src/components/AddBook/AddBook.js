@@ -55,9 +55,15 @@ const AddBook = () => {
         </div>
         <div className="row">
           <input
-            className="col-6 same-desgine"
+            className="col-3 same-desgine"
             name="cost"
             placeholder="price"
+            ref={register({ required: true })}
+          />
+          <input
+            className="col-3 same-desgine"
+            name="pdf"
+            type="file"
             ref={register({ required: true })}
           />
           <br />
@@ -68,7 +74,6 @@ const AddBook = () => {
             onChange={handleImageUpload}
           />
         </div>
-
         <br />
         <input
           type="submit"
