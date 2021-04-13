@@ -3,22 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* .loginAndSignUp {
-  display: flex;
-  border: 2px solid black;
-  width: 500px !important;
-  padding: 30px;
-} */
-
-
-
-
-@media only screen and (max-width: 500px) {
-  .LoginSectionImage img {
-    width: 100% !important;
-  }
+.containersed {
+  background-color: #ffffff;
+  padding: 50px;
 }
-@media only screen and (max-width: 500px) {
+
+/* @media only screen and (max-width: 500px) {
   .logo {
     width: 100px;
     margin-left: 25px!important;
@@ -72,7 +62,7 @@
    display: inline!important;
    width: 100% !important;
   }
-}
+} */
 
 
 .GoogleFbSignIn {}
@@ -83,16 +73,6 @@
 }
 #main {
   margin-top: 100px;
-}
-
-.LoginSection {
-  display:flex;
-  width: 100%;
-  
-}
-.LoginSectionForm {
-  display:flex;
-  width: 50%;
 }
 .LoginSectionTitle {
 font-size: 50px !important;
@@ -109,6 +89,11 @@ padding: 20px 100px 20px 100px;
   -o-border-radius:8px;
   outline-style: none;
 }
+.LoginSectionImage img{
+margin-top: 130px;
+margin-left: 50px;
+height:70%;
+}
 #submit{
 padding: 16px 145px 16px 145px;
  background-color: rgb(103, 230, 80);
@@ -119,20 +104,12 @@ padding: 16px 145px 16px 145px;
  -o-border-radius:8px;
  outline-style: none;
  border-color: rgb(139, 216, 125);
- font-weight: 900;
  font-size: 25px;
+ color: white;
 
 }
-.LoginSectionImage {
-  display:flex;
-  width: 50%;
-}
-.LoginSectionImage img {
- width: 720px;
- height: 725px;
-}
 .gBtn {
- padding: 16px 50px 20px 50px;
+ padding: 16px 60px 20px 60px;
  margin-bottom: 8px;
   border-radius:8px;
   -webkit-border-radius:8px;
@@ -142,11 +119,11 @@ padding: 16px 145px 16px 145px;
   outline-style: none;
   border-color: rgb(139, 216, 125);
  background-color: rgb(103, 230, 80);
- font-weight: 900;
  font-size: 25px;
+  color: white;
 }
 .fbBtn {
-  padding: 16px 50px 20px 50px;
+ padding: 16px 48px 20px 45px !important;
    border-radius:8px;
    -webkit-border-radius:8px;
    -moz-border-radius:8px;
@@ -155,14 +132,10 @@ padding: 16px 145px 16px 145px;
    outline-style: none;
    border-color: rgb(139, 216, 125);
  background-color: rgb(103, 230, 80);
- font-weight: 900;
  font-size: 25px;
  padding: 15px 30px 15px 20px;
  margin-bottom: 100px;
  margin-top: 10px;
+  color: white;
 }
-.logo{
-margin-left: 192px;
-margin-top: 20px;
-display: inline-block;
-}
+.logo{margin-top: 40px;}

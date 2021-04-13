@@ -2,6 +2,7 @@ import React from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
+import Login from "./Login";
 
 export const intializeLoginFramework = () => {
   if (firebase.apps.length === 0) {
@@ -48,6 +49,7 @@ export const handleFbSignIn = () => {
       var errorMessage = error.message;
       var email = error.email;
       var credential = error.credential;
+      console.log(errorCode, errorMessage, email, credential);
     });
 };
 export const handleSignOut = () => {
@@ -74,17 +76,18 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((res) => {
-      const newUserInfo = res.user;
-      newUserInfo.error = "";
-      newUserInfo.success = true;
+      const newUser = res.user;
+      newUser.error = "";
+      newUser.success = true;
       updateUserName(name);
-      return newUserInfo;
+      return newUser;
     })
     .catch((error) => {
-      let newUserInfo = {};
-      newUserInfo.error = error.message;
-      newUserInfo.success = false;
-      return newUserInfo;
+      var newUser = {};
+      newUser.error = error.message;
+      newUser.success = false;
+      console.log(newUser);
+      return newUser;
     });
 };
 export const signInWithEmailAndPassword = (email, password) => {
@@ -92,16 +95,18 @@ export const signInWithEmailAndPassword = (email, password) => {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then((res) => {
-      const newUserInfo = res.user;
-      newUserInfo.error = "";
-      newUserInfo.success = true;
-      return newUserInfo;
+      const newUser = res.user;
+      newUser.error = "";
+      newUser.success = true;
+      console.log(newUser);
+      return newUser;
     })
     .catch((error) => {
-      let newUserInfo = {};
-      newUserInfo.error = error.message;
-      newUserInfo.success = false;
-      return newUserInfo;
+      let newUser = {};
+      newUser.error = error.message;
+      newUser.success = false;
+      console.log(newUser);
+      return newUser;
     });
 };
 const updateUserName = (name) => {
@@ -118,7 +123,9 @@ const updateUserName = (name) => {
     });
 };
 const LoginManager = () => {
-  return <div></div>;
+  return (
+    <div>{/* <Login className="d-none" newUser={newUser}></Login> */}</div>
+  );
 };
 
 export default LoginManager;

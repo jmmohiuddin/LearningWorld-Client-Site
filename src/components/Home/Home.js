@@ -3,19 +3,19 @@ import Nilkhet from "../../images/Nilkhet.jfif";
 import "./Home.css";
 import BookCart from "../BookCart/BookCart";
 import { CircularProgress } from "@material-ui/core";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 const Home = () => {
   const [book, setBook] = useState([]);
   useEffect(() => {
-    fetch("https://quiet-springs-03889.herokuapp.com/events")
+    fetch("http://localhost:5055/events")
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, []);
   console.log(book);
   return (
     <>
-      {/* <div>
-        <input type="file" />
-      </div> */}
+      <Header></Header>
       <div
         style={{
           backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${Nilkhet})`,
@@ -31,6 +31,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };

@@ -16,10 +16,10 @@
       n.r(t);
       var c = n(0),
         a = n.n(c),
-        i = n(12),
-        s = n.n(i),
+        s = n(12),
+        i = n.n(s),
         r = (n(113), n(9)),
-        o = (n(114), n(19)),
+        o = (n(114), n(17)),
         l = n(14),
         j = n.p + "static/media/Nilkhet.be7d6116.jfif",
         d = (n(115), n(116), n(194)),
@@ -30,8 +30,8 @@
         m = n(201),
         p = n(202),
         x = n(65),
-        f = n(62),
-        g = n(92),
+        f = n(61),
+        g = n(91),
         v = n.n(g),
         N = n(1),
         w = Object(d.a)(function (e) {
@@ -49,13 +49,13 @@
             avatar: { backgroundColor: f.a[500] },
           };
         });
-      function k(e) {
+      function y(e) {
         var t,
           n,
           c = e.book,
           a = w(),
-          i = Object(l.g)(),
-          s = c._id,
+          s = Object(l.g)(),
+          i = c._id,
           r = c.imageURL;
         return Object(N.jsxs)(b.a, {
           className: a.root,
@@ -67,7 +67,7 @@
               title: "Paella dish",
             }),
             Object(N.jsx)("img", {
-              src: "/images/".concat(s, ".png"),
+              src: "/images/".concat(i, ".png"),
               alt: "",
             }),
             Object(N.jsx)(h.a, {
@@ -103,7 +103,7 @@
                 Object(N.jsx)(p.a, {
                   className: " vehicleBtn ml-5 pr-5 pl-5",
                   onClick: function () {
-                    return (e = s), void i.push("/book/".concat(e));
+                    return (e = i), void s.push("/book/".concat(e));
                     var e;
                   },
                   variant: "contained",
@@ -115,7 +115,7 @@
           ],
         });
       }
-      var y = n(203),
+      var k = n(203),
         S = function () {
           var e = Object(c.useState)([]),
             t = Object(r.a)(e, 2),
@@ -123,7 +123,7 @@
             a = t[1];
           return (
             Object(c.useEffect)(function () {
-              fetch("https://quiet-springs-03889.herokuapp.com/events")
+              fetch("http://localhost:5055/events")
                 .then(function (e) {
                   return e.json();
                 })
@@ -145,9 +145,9 @@
                   className: "container allBook",
                   children: [
                     0 === n.length &&
-                      Object(N.jsx)(y.a, { className: "text-center mt-5" }),
+                      Object(N.jsx)(k.a, { className: "text-center mt-5" }),
                     n.map(function (e) {
-                      return Object(N.jsx)(k, { book: e }, e._id);
+                      return Object(N.jsx)(y, { book: e }, e._id);
                     }),
                   ],
                 }),
@@ -160,7 +160,7 @@
             n = null === t || void 0 === t ? void 0 : t.AddEvents,
             c = n.name,
             a = n.cost,
-            i = n.author;
+            s = n.author;
           return Object(N.jsx)("section", {
             className: "container-md ",
             children: Object(N.jsxs)("div", {
@@ -175,7 +175,7 @@
                 }),
                 Object(N.jsx)("div", {
                   className: " col-3",
-                  children: Object(N.jsx)("p", { children: i }),
+                  children: Object(N.jsx)("p", { children: s }),
                 }),
                 Object(N.jsx)("div", {
                   className: " col-3",
@@ -188,9 +188,7 @@
                       return (
                         (e = t._id),
                         void fetch(
-                          "https://enigmatic-basin-74595.herokuapp.com/deleteEvent/".concat(
-                            e
-                          ),
+                          "http://localhost:5055/deleteEvent/".concat(e),
                           { method: "DELETE" }
                         )
                           .then(function (e) {
@@ -200,7 +198,7 @@
                       );
                       var e;
                     },
-                    className: "btn btn-primary",
+                    className: "btn btn-primary mb-2",
                     children: "Delete",
                   }),
                 }),
@@ -217,7 +215,7 @@
               a = t[1];
             return (
               Object(c.useEffect)(function () {
-                fetch("https://quiet-springs-03889.herokuapp.com/events")
+                fetch("http://localhost:5055/events")
                   .then(function (e) {
                     return e.json();
                   })
@@ -225,84 +223,71 @@
                     return a(e);
                   });
               }, []),
-              Object(N.jsxs)(N.Fragment, {
-                children: [
-                  Object(N.jsx)(o.b, {
-                    to: "/addBook",
-                    className: "addMin mt-5 d-inline-block",
-                    children: "Add Product",
-                  }),
-                  Object(N.jsx)("br", {}),
-                  Object(N.jsx)(o.b, {
-                    to: "/Admin",
-                    className: "addMin mt-5 d-inline-block",
-                    children: "Manage books",
-                  }),
-                  Object(N.jsxs)("section", {
-                    className: "container-md",
-                    children: [
-                      Object(N.jsx)("br", {}),
-                      Object(N.jsx)("br", {}),
-                      Object(N.jsxs)("div", {
-                        className: "row container-md",
-                        children: [
-                          Object(N.jsx)("div", {
-                            className: " col-3",
-                            children: Object(N.jsx)("b", {
-                              children: Object(N.jsx)("h5", {
-                                children: "Book Name",
-                              }),
+              Object(N.jsx)(N.Fragment, {
+                children: Object(N.jsxs)("section", {
+                  className: "container-md Orders mt-5",
+                  children: [
+                    Object(N.jsx)("br", {}),
+                    Object(N.jsx)("br", {}),
+                    Object(N.jsxs)("div", {
+                      className: "row container-md OrdersTitle",
+                      children: [
+                        Object(N.jsx)("div", {
+                          className: " col-3",
+                          children: Object(N.jsx)("b", {
+                            children: Object(N.jsx)("h5", {
+                              children: "Book Name",
                             }),
                           }),
-                          Object(N.jsx)("div", {
-                            className: " col-3",
-                            children: Object(N.jsx)("b", {
-                              children: Object(N.jsx)("h5", {
-                                children: " Author Name",
-                              }),
+                        }),
+                        Object(N.jsx)("div", {
+                          className: " col-3",
+                          children: Object(N.jsx)("b", {
+                            children: Object(N.jsx)("h5", {
+                              children: " Author Name",
                             }),
                           }),
-                          Object(N.jsx)("div", {
-                            className: " col-3",
-                            children: Object(N.jsx)("b", {
-                              children: Object(N.jsx)("h5", {
-                                children: "Price",
-                              }),
+                        }),
+                        Object(N.jsx)("div", {
+                          className: " col-3",
+                          children: Object(N.jsx)("b", {
+                            children: Object(N.jsx)("h5", {
+                              children: "Price",
                             }),
                           }),
-                          Object(N.jsx)("div", {
-                            className: " col-3",
-                            children: Object(N.jsx)("b", {
-                              children: Object(N.jsx)("h5", {
-                                children: "Action",
-                              }),
+                        }),
+                        Object(N.jsx)("div", {
+                          className: " col-3",
+                          children: Object(N.jsx)("b", {
+                            children: Object(N.jsx)("h5", {
+                              children: "Action",
                             }),
                           }),
-                        ],
-                      }),
-                      Object(N.jsx)("br", {}),
-                      Object(N.jsx)("br", {}),
-                      Object(N.jsxs)("div", {
-                        className: "row",
-                        children: [
-                          0 === n.length &&
-                            Object(N.jsx)(y.a, {
-                              className: "text-center mt-5",
-                            }),
-                          n.map(function (e) {
-                            return Object(N.jsx)(C, { book: e });
+                        }),
+                      ],
+                    }),
+                    Object(N.jsx)("br", {}),
+                    Object(N.jsx)("br", {}),
+                    Object(N.jsxs)("div", {
+                      className: "row ",
+                      children: [
+                        0 === n.length &&
+                          Object(N.jsx)(k.a, {
+                            className: "text-center mt-5 ml-5",
                           }),
-                        ],
-                      }),
-                    ],
-                  }),
-                ],
+                        n.map(function (e) {
+                          return Object(N.jsx)(C, { book: e });
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
               })
             );
           }),
-        A = n(93),
+        A = n(92),
         B = n.n(A),
-        E = n(61),
+        E = n(60),
         P =
           (n(142),
           function () {
@@ -310,9 +295,9 @@
               t = e.register,
               n = e.handleSubmit,
               a = (e.watch, e.errors, Object(c.useState)(null)),
-              i = Object(r.a)(a, 2),
-              s = i[0],
-              o = i[1];
+              s = Object(r.a)(a, 2),
+              i = s[0],
+              o = s[1];
             return Object(N.jsxs)("div", {
               className: "container-md mt-5",
               children: [
@@ -322,15 +307,12 @@
                 }),
                 Object(N.jsxs)("form", {
                   onSubmit: n(function (e) {
-                    var t = { imageURL: s, AddEvents: e };
-                    fetch(
-                      "https://quiet-springs-03889.herokuapp.com/addEvent",
-                      {
-                        method: "POST",
-                        headers: { "content-type": "application/json" },
-                        body: JSON.stringify(t),
-                      }
-                    ).then(function (e) {
+                    var t = { imageURL: i, AddEvents: e };
+                    fetch("http://localhost:5055/addEvent", {
+                      method: "POST",
+                      headers: { "content-type": "application/json" },
+                      body: JSON.stringify(t),
+                    }).then(function (e) {
                       return console.log("server side response", e);
                     });
                   }),
@@ -358,15 +340,9 @@
                       className: "row",
                       children: [
                         Object(N.jsx)("input", {
-                          className: "col-3 same-desgine",
+                          className: "col-6 same-desgine",
                           name: "cost",
                           placeholder: "price",
-                          ref: t({ required: !0 }),
-                        }),
-                        Object(N.jsx)("input", {
-                          className: "col-3 same-desgine",
-                          name: "pdf",
-                          type: "file",
                           ref: t({ required: !0 }),
                         }),
                         Object(N.jsx)("br", {}),
@@ -376,7 +352,7 @@
                           type: "file",
                           onChange: function (e) {
                             var t = new FormData();
-                            t.set("key", "6cab7d7b5a429ce36568881d7a7f7081"),
+                            t.set("key", "03b008c33977f6a3ea82d4ba47c18173"),
                               t.append("image", e.target.files[0]),
                               B.a
                                 .post("https://api.imgbb.com/1/upload", t)
@@ -402,8 +378,10 @@
             });
           }),
         q = n(28),
-        D = (n(143), n(29)),
-        L =
+        L = (n(143), n.p, n.p, n.p + "static/media/image3.3756533f.jpg"),
+        D = n.p + "static/media/logo.29290f88.png",
+        T = n(29),
+        W =
           (n(144),
           {
             apiKey: "AIzaSyDzhVznafjnct2HWF6t86Q_m5CDGAE6PtE",
@@ -415,7 +393,7 @@
             measurementId: "G-QKQ1985CMY",
           }),
         M = function (e) {
-          D.a
+          T.a
             .auth()
             .currentUser.updateProfile({ displayName: e })
             .then(function () {
@@ -425,14 +403,14 @@
               console.log(e);
             });
         },
-        W = n(63),
-        T = n(64);
-      var F = function () {
+        F = n(62),
+        R = n(63);
+      var V = function () {
           var e = Object(c.useState)(!1),
             t = Object(r.a)(e, 2),
             n = t[0],
             a = t[1],
-            i = Object(c.useState)({
+            s = Object(c.useState)({
               isSignIn: !1,
               newUser: !1,
               name: "",
@@ -440,13 +418,13 @@
               photo: "",
               password: "",
             }),
-            s = Object(r.a)(i, 2),
-            o = s[0],
-            j = s[1];
-          0 === D.a.apps.length && D.a.initializeApp(L);
+            i = Object(r.a)(s, 2),
+            o = i[0],
+            j = i[1];
+          0 === T.a.apps.length && T.a.initializeApp(W);
           var d = Object(l.g)(),
             b = (Object(l.h)().state || { from: { pathname: "/" } }).from,
-            u = Object(c.useContext)(Ae),
+            u = Object(c.useContext)(Be),
             h = Object(r.a)(u, 2),
             O = (h[0], h[1]),
             m = function (e, t) {
@@ -470,256 +448,289 @@
             };
           return Object(N.jsxs)(N.Fragment, {
             children: [
+              Object(N.jsx)("img", { src: D, alt: "", className: "logo" }),
               Object(N.jsx)("section", {
-                className: " container-md text-center loginAndSignUp mt-5",
-                id: "main",
-                children: Object(N.jsxs)("div", {
-                  className: " container-md mt-5",
-                  id: "main",
+                className: "container-md LoginSection",
+                children: Object(N.jsxs)("section", {
+                  className: "row",
                   children: [
-                    n
-                      ? Object(N.jsx)("h1", { children: "Create an account" })
-                      : Object(N.jsx)("h1", { children: "Login" }),
-                    Object(N.jsxs)("form", {
-                      onSubmit: function (e) {
-                        var t, c, a;
-                        n &&
-                          o.email &&
-                          o.password &&
-                          ((t = o.name),
-                          (c = o.email),
-                          (a = o.password),
-                          D.a
-                            .auth()
-                            .createUserWithEmailAndPassword(c, a)
-                            .then(function (e) {
-                              var n = e.user;
-                              return (n.error = ""), (n.success = !0), M(t), n;
+                    Object(N.jsxs)("div", {
+                      className: " mt-5 LoginSectionForm d-block",
+                      id: "main col-sm-12 col-md-6",
+                      children: [
+                        n
+                          ? Object(N.jsx)("h1", {
+                              className: "LoginSectionTitle",
+                              children: "Create an account",
                             })
-                            .catch(function (e) {
-                              var t = {};
-                              return (t.error = e.message), (t.success = !1), t;
-                            })).then(function (e) {
-                            j(e), O(e), d.replace(b);
-                          }),
-                          !n &&
-                            o.email &&
-                            o.password &&
-                            (function (e, t) {
-                              return D.a
+                          : Object(N.jsx)("h1", {
+                              className: "LoginSectionTitle",
+                              children: "Login",
+                            }),
+                        Object(N.jsx)("br", {}),
+                        Object(N.jsxs)("form", {
+                          onSubmit: function (e) {
+                            var t, c, a;
+                            n &&
+                              o.email &&
+                              o.password &&
+                              ((t = o.name),
+                              (c = o.email),
+                              (a = o.password),
+                              T.a
                                 .auth()
-                                .signInWithEmailAndPassword(e, t)
+                                .createUserWithEmailAndPassword(c, a)
                                 .then(function (e) {
-                                  var t = e.user;
-                                  return (t.error = ""), (t.success = !0), t;
+                                  var n = e.user;
+                                  return (
+                                    (n.error = ""), (n.success = !0), M(t), n
+                                  );
                                 })
                                 .catch(function (e) {
                                   var t = {};
                                   return (
                                     (t.error = e.message), (t.success = !1), t
                                   );
-                                });
-                            })(o.email, o.password).then(function (e) {
-                              j(e), O(e), d.replace(b);
-                            }),
-                          e.preventDefault();
-                      },
-                      children: [
-                        n &&
-                          Object(N.jsx)("input", {
-                            type: "text",
-                            onBlur: p,
-                            placeholder: "Your name",
-                            required: !0,
-                            name: "name",
-                          }),
-                        Object(N.jsx)("br", {}),
-                        Object(N.jsx)("input", {
-                          type: "text",
-                          onBlur: p,
-                          placeholder: "Your email address",
-                          required: !0,
-                          name: "email",
-                        }),
-                        Object(N.jsx)("br", {}),
-                        Object(N.jsx)("input", {
-                          type: "password",
-                          id: "txtPassword",
-                          onBlur: p,
-                          name: "password",
-                          placeholder: "Your password",
-                          required: !0,
-                        }),
-                        Object(N.jsx)("br", {}),
-                        n &&
-                          Object(N.jsx)("input", {
-                            id: "txtConfirmPassword",
-                            type: "password",
-                            onBlur: p,
-                            placeholder: "Confirm password",
-                            required: !0,
-                            name: "Confirmpassword",
-                          }),
-                        Object(N.jsx)("br", {}),
-                        Object(N.jsxs)("p", {
-                          children: [
-                            Object(N.jsx)("input", {
-                              type: "checkbox",
-                              name: "newUser",
-                              id: "",
-                            }),
-                            "Remember Me",
-                          ],
-                        }),
-                        Object(N.jsx)("br", {}),
-                        Object(N.jsx)("input", {
-                          type: "submit",
-                          value: n ? "sign up" : "sign in",
-                          className: "signupSignInBtn",
-                        }),
-                        Object(N.jsx)("br", {}),
-                        n
-                          ? Object(N.jsx)("p", {})
-                          : Object(N.jsxs)("b", {
-                              className: "d-inline-block",
-                              children: [
-                                "Dont have an account?",
-                                Object(N.jsx)("p", {
-                                  onClick: function () {
-                                    return a(!n);
-                                  },
-                                  className: "d-inline-block text-danger",
-                                  style: { cursor: "pointer" },
-                                  children: "Create an account",
+                                })).then(function (e) {
+                                j(e), O(e), d.replace(b);
+                              }),
+                              !n &&
+                                o.email &&
+                                o.password &&
+                                (function (e, t) {
+                                  return T.a
+                                    .auth()
+                                    .signInWithEmailAndPassword(e, t)
+                                    .then(function (e) {
+                                      var t = e.user;
+                                      return (
+                                        (t.error = ""), (t.success = !0), t
+                                      );
+                                    })
+                                    .catch(function (e) {
+                                      var t = {};
+                                      return (
+                                        (t.error = e.message),
+                                        (t.success = !1),
+                                        t
+                                      );
+                                    });
+                                })(o.email, o.password).then(function (e) {
+                                  j(e), O(e), d.replace(b);
                                 }),
+                              e.preventDefault();
+                          },
+                          children: [
+                            n &&
+                              Object(N.jsx)("input", {
+                                type: "text",
+                                onBlur: p,
+                                placeholder: "Your name",
+                                required: !0,
+                                name: "name",
+                                className: "mb-2",
+                              }),
+                            Object(N.jsx)("br", {}),
+                            Object(N.jsx)("input", {
+                              type: "text",
+                              onBlur: p,
+                              placeholder: "Your email address",
+                              required: !0,
+                              name: "email",
+                              className: "mb-3",
+                            }),
+                            Object(N.jsx)("br", {}),
+                            Object(N.jsx)("input", {
+                              type: "password",
+                              id: "txtPassword",
+                              onBlur: p,
+                              name: "password",
+                              placeholder: "Your password",
+                              required: !0,
+                              className: "mb-2",
+                            }),
+                            Object(N.jsx)("br", {}),
+                            n &&
+                              Object(N.jsx)("input", {
+                                id: "txtConfirmPassword",
+                                type: "password",
+                                onBlur: p,
+                                placeholder: "Confirm password",
+                                required: !0,
+                                name: "Confirmpassword ",
+                                className: "mb-2",
+                              }),
+                            Object(N.jsx)("br", {}),
+                            Object(N.jsxs)("p", {
+                              children: [
+                                Object(N.jsx)("input", {
+                                  type: "checkbox",
+                                  name: "newUser",
+                                  id: "",
+                                }),
+                                "Remember Me",
                               ],
                             }),
+                            Object(N.jsx)("br", {}),
+                            Object(N.jsx)("input", {
+                              id: "submit",
+                              type: "submit",
+                              value: n ? "sign up" : "sign in",
+                              className: "signupSignInBtn mb-3",
+                            }),
+                            Object(N.jsx)("br", {}),
+                            n
+                              ? Object(N.jsx)("p", {})
+                              : Object(N.jsxs)("p", {
+                                  className: "createAccount",
+                                  children: [
+                                    "Dont have an account?",
+                                    Object(N.jsx)("p", {
+                                      onClick: function () {
+                                        return a(!n);
+                                      },
+                                      className: "text-danger createAccount",
+                                      style: { cursor: "pointer" },
+                                      children: "Create an account",
+                                    }),
+                                  ],
+                                }),
+                          ],
+                        }),
+                        Object(N.jsx)("p", {
+                          style: { color: "red" },
+                          children: o.error,
+                        }),
+                        o.success &&
+                          Object(N.jsxs)("p", {
+                            style: { color: "green" },
+                            children: [
+                              "User ",
+                              n ? "created" : "login",
+                              " successfully",
+                            ],
+                          }),
+                        Object(N.jsxs)("div", {
+                          className: "mt-5 ",
+                          children: [
+                            o.isSignIn
+                              ? Object(N.jsxs)("button", {
+                                  onClick: function () {
+                                    T.a
+                                      .auth()
+                                      .signOut()
+                                      .then(function (e) {
+                                        return {
+                                          isSignIn: !1,
+                                          name: "",
+                                          email: "",
+                                          photo: "",
+                                          error: "",
+                                          success: !1,
+                                        };
+                                      })
+                                      .catch(function (e) {
+                                        console.log(e);
+                                      })
+                                      .then(function (e) {
+                                        m(e, !1);
+                                      });
+                                  },
+                                  children: [
+                                    Object(N.jsx)(F.a, { icon: R.b }),
+                                    "sign out",
+                                  ],
+                                })
+                              : Object(N.jsxs)("button", {
+                                  onClick: function () {
+                                    (function () {
+                                      var e = new T.a.auth.GoogleAuthProvider();
+                                      return T.a
+                                        .auth()
+                                        .signInWithPopup(e)
+                                        .then(function (e) {
+                                          var t = e.user,
+                                            n = t.displayName,
+                                            c = t.photoURL;
+                                          return {
+                                            isSignIn: !0,
+                                            name: n,
+                                            email: t.email,
+                                            photo: c,
+                                            success: !0,
+                                          };
+                                        })
+                                        .catch(function (e) {
+                                          console.log(e),
+                                            console.log(e.message);
+                                        });
+                                    })().then(function (e) {
+                                      m(e, !0);
+                                    });
+                                  },
+                                  className: "gBtn",
+                                  children: [
+                                    Object(N.jsx)(F.a, { icon: R.b }),
+                                    "sign in With Google",
+                                  ],
+                                }),
+                            Object(N.jsx)("br", {}),
+                            Object(N.jsxs)("button", {
+                              onClick: function () {
+                                (function () {
+                                  var e = new T.a.auth.FacebookAuthProvider();
+                                  return T.a
+                                    .auth()
+                                    .signInWithPopup(e)
+                                    .then(function (e) {
+                                      e.credential.accessToken;
+                                      var t = e.user;
+                                      return (t.success = !0), t;
+                                    })
+                                    .catch(function (e) {
+                                      e.code, e.message, e.email, e.credential;
+                                    });
+                                })().then(function (e) {
+                                  m(e, !0);
+                                });
+                              },
+                              className: "fbBtn",
+                              children: [
+                                Object(N.jsx)(F.a, { icon: R.a }),
+                                "Sign in using Facebook",
+                                " ",
+                              ],
+                            }),
+                          ],
+                        }),
                       ],
                     }),
-                    Object(N.jsx)("p", {
-                      style: { color: "red" },
-                      children: o.error,
+                    Object(N.jsx)("div", {
+                      className:
+                        "LoginSectionImage col-sm-12 col-md-6 container-md",
+                      children: Object(N.jsx)("img", { src: L, alt: "" }),
                     }),
-                    o.success &&
-                      Object(N.jsxs)("p", {
-                        style: { color: "green" },
-                        children: [
-                          "User ",
-                          n ? "created" : "login",
-                          " successfully",
-                        ],
-                      }),
                   ],
                 }),
-              }),
-              Object(N.jsxs)("div", {
-                className: "text-center mt-5 GoogleFbSignIn",
-                children: [
-                  o.isSignIn
-                    ? Object(N.jsxs)("button", {
-                        onClick: function () {
-                          D.a
-                            .auth()
-                            .signOut()
-                            .then(function (e) {
-                              return {
-                                isSignIn: !1,
-                                name: "",
-                                email: "",
-                                photo: "",
-                                error: "",
-                                success: !1,
-                              };
-                            })
-                            .catch(function (e) {
-                              console.log(e);
-                            })
-                            .then(function (e) {
-                              m(e, !1);
-                            });
-                        },
-                        children: [
-                          Object(N.jsx)(W.a, { icon: T.b }),
-                          "sign out",
-                        ],
-                      })
-                    : Object(N.jsxs)("button", {
-                        onClick: function () {
-                          (function () {
-                            var e = new D.a.auth.GoogleAuthProvider();
-                            return D.a
-                              .auth()
-                              .signInWithPopup(e)
-                              .then(function (e) {
-                                var t = e.user,
-                                  n = t.displayName,
-                                  c = t.photoURL;
-                                return {
-                                  isSignIn: !0,
-                                  name: n,
-                                  email: t.email,
-                                  photo: c,
-                                  success: !0,
-                                };
-                              })
-                              .catch(function (e) {
-                                console.log(e), console.log(e.message);
-                              });
-                          })().then(function (e) {
-                            m(e, !0);
-                          });
-                        },
-                        children: [
-                          Object(N.jsx)(W.a, { icon: T.b }),
-                          "sign in With Google",
-                        ],
-                      }),
-                  Object(N.jsx)("br", {}),
-                  Object(N.jsxs)("button", {
-                    onClick: function () {
-                      (function () {
-                        var e = new D.a.auth.FacebookAuthProvider();
-                        return D.a
-                          .auth()
-                          .signInWithPopup(e)
-                          .then(function (e) {
-                            e.credential.accessToken;
-                            var t = e.user;
-                            return (t.success = !0), t;
-                          })
-                          .catch(function (e) {
-                            e.code, e.message, e.email, e.credential;
-                          });
-                      })().then(function (e) {
-                        m(e, !0);
-                      });
-                    },
-                    children: [
-                      Object(N.jsx)(W.a, { icon: T.a }),
-                      "Sign in using Facebook",
-                      " ",
-                    ],
-                  }),
-                ],
               }),
             ],
           });
         },
-        R =
+        z =
           (n(148),
           function () {
             var e,
               t,
               n = Object(l.i)().bookId,
               a = Object(c.useState)([]),
-              i = Object(r.a)(a, 2),
-              s = i[0],
-              o = i[1],
+              s = Object(r.a)(a, 2),
+              i = s[0],
+              o = s[1],
               j = Object(c.useState)(!1),
               d = Object(r.a)(j, 2),
               b = d[0],
               u = d[1],
-              h = Object(c.useContext)(Ae),
+              h = Object(c.useContext)(Be),
               O = Object(r.a)(h, 2),
               m = O[0],
               p = (O[1], Object(E.a)()),
@@ -728,17 +739,17 @@
               g = (p.watch, Object(c.useState)([])),
               v = Object(r.a)(g, 2),
               w = v[0],
-              k = v[1];
+              y = v[1];
             Object(c.useEffect)(function () {
-              fetch("https://quiet-springs-03889.herokuapp.com/events")
+              fetch("http://localhost:5055/events")
                 .then(function (e) {
                   return e.json();
                 })
                 .then(function (e) {
-                  return k(e);
+                  return y(e);
                 });
             }, []);
-            var y =
+            var k =
               null === w || void 0 === w
                 ? void 0
                 : w.find(function (e) {
@@ -746,10 +757,7 @@
                   });
             return (
               Object(c.useEffect)(function () {
-                fetch(
-                  "https://quiet-springs-03889.herokuapp.com/orders?email=" +
-                    m.email
-                )
+                fetch("http://localhost:5055/orders?email=" + m.email)
                   .then(function (e) {
                     return e.json();
                   })
@@ -792,7 +800,7 @@
                             }),
                           ],
                         }),
-                        s.map(function (e) {
+                        i.map(function (e) {
                           var t, n;
                           return Object(N.jsxs)("div", {
                             className: "row text-justify",
@@ -871,16 +879,11 @@
                                 {},
                                 { orderTime: new Date() }
                               );
-                              fetch(
-                                "https://quiet-springs-03889.herokuapp.com/addOrder",
-                                {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                  },
-                                  body: JSON.stringify(t),
-                                }
-                              )
+                              fetch("http://localhost:5055/addOrder", {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify(t),
+                              })
                                 .then(function (e) {
                                   return e.json();
                                 })
@@ -893,7 +896,7 @@
                                 className: "d-none",
                                 name: "id",
                                 defaultValue:
-                                  null === y || void 0 === y ? void 0 : y._id,
+                                  null === k || void 0 === k ? void 0 : k._id,
                                 ref: x({ required: !0 }),
                                 placeholder: "book cost",
                               }),
@@ -902,9 +905,9 @@
                                 readOnly: !0,
                                 name: "bookName",
                                 defaultValue:
-                                  null === y ||
-                                  void 0 === y ||
-                                  null === (e = y.AddEvents) ||
+                                  null === k ||
+                                  void 0 === k ||
+                                  null === (e = k.AddEvents) ||
                                   void 0 === e
                                     ? void 0
                                     : e.name,
@@ -925,9 +928,9 @@
                                 readOnly: !0,
                                 name: "cost",
                                 defaultValue:
-                                  null === y ||
-                                  void 0 === y ||
-                                  null === (t = y.AddEvents) ||
+                                  null === k ||
+                                  void 0 === k ||
+                                  null === (t = k.AddEvents) ||
                                   void 0 === t
                                     ? void 0
                                     : t.cost,
@@ -948,42 +951,41 @@
             );
           }),
         U = n(11),
-        V = (n(149), n.p + "static/media/logo.29290f88.png"),
-        z = n(16),
+        _ = (n(149), n(16)),
         G = n(208),
-        _ = n(209),
-        J = n(214),
+        J = n(209),
+        K = n(214),
         Q = n(206),
         Y = n(205),
         H = n(215),
-        K = n(95),
-        X = n.n(K),
-        $ = n(96),
-        Z = n.n($),
-        ee = n(73),
-        te = n.n(ee),
-        ne = n(53),
-        ce = n.n(ne),
-        ae = n(72),
-        ie = n.n(ae),
-        se = n(97),
-        re = n.n(se),
-        oe = n(5),
-        le = n(34),
-        je = n(216),
-        de = n(207),
-        be = n(204),
-        ue = n(210),
-        he = n(98),
-        Oe = n.n(he),
-        me = n(99),
-        pe = n.n(me),
-        xe = n(153),
-        fe = n(211),
-        ge = n(212),
-        ve = n(74),
-        Ne = n.n(ve),
-        we = 240,
+        X = n(94),
+        $ = n.n(X),
+        Z = n(95),
+        ee = n.n(Z),
+        te = n(73),
+        ne = n.n(te),
+        ce = n(64),
+        ae = n.n(ce),
+        se = n(72),
+        ie = n.n(se),
+        re = n(96),
+        oe = n.n(re),
+        le = n(5),
+        je = n(34),
+        de = n(216),
+        be = n(207),
+        ue = n(204),
+        he = n(210),
+        Oe = n(97),
+        me = n.n(Oe),
+        pe = n(98),
+        xe = n.n(pe),
+        fe = n(153),
+        ge = n(211),
+        ve = n(212),
+        Ne = n(99),
+        we = n.n(Ne),
+        ye = 240,
         ke = Object(d.a)(function (e) {
           var t;
           return {
@@ -996,9 +998,9 @@
               {
                 position: "relative",
                 borderRadius: e.shape.borderRadius,
-                backgroundColor: Object(z.b)(e.palette.common.white, 0.15),
+                backgroundColor: Object(_.b)(e.palette.common.white, 0.15),
                 "&:hover": {
-                  backgroundColor: Object(z.b)(e.palette.common.white, 0.25),
+                  backgroundColor: Object(_.b)(e.palette.common.white, 0.25),
                 },
                 marginRight: e.spacing(2),
                 marginLeft: 0,
@@ -1045,16 +1047,16 @@
                 }),
               }),
               Object(U.a)(t, "appBarShift", {
-                width: "calc(100% - ".concat(we, "px)"),
-                marginLeft: we,
+                width: "calc(100% - ".concat(ye, "px)"),
+                marginLeft: ye,
                 transition: e.transitions.create(["margin", "width"], {
                   easing: e.transitions.easing.easeOut,
                   duration: e.transitions.duration.enteringScreen,
                 }),
               }),
               Object(U.a)(t, "hide", { display: "none" }),
-              Object(U.a)(t, "drawer", { width: we, flexShrink: 0 }),
-              Object(U.a)(t, "drawerPaper", { width: we }),
+              Object(U.a)(t, "drawer", { width: ye, flexShrink: 0 }),
+              Object(U.a)(t, "drawerPaper", { width: ye }),
               Object(U.a)(
                 t,
                 "drawerHeader",
@@ -1090,35 +1092,35 @@
               t),
           };
         }),
-        ye = function () {
+        Se = function () {
           var e = ke(),
             t = a.a.useState(null),
             n = Object(r.a)(t, 2),
-            i = n[0],
-            s = n[1],
+            s = n[0],
+            i = n[1],
             l = a.a.useState(null),
             j = Object(r.a)(l, 2),
             d = j[0],
             b = j[1],
-            u = Boolean(i),
+            u = Boolean(s),
             h = Boolean(d),
             O = function (e) {
-              s(e.currentTarget);
+              i(e.currentTarget);
             },
             p = function () {
               b(null);
             },
             f = function () {
-              s(null), p();
+              i(null), p();
             },
-            g = Object(le.a)(),
+            g = Object(je.a)(),
             v = a.a.useState(!1),
             w = Object(r.a)(v, 2),
-            k = w[0],
-            y = w[1],
+            y = w[0],
+            k = w[1],
             S = "primary-search-account-menu",
             C = Object(N.jsxs)(H.a, {
-              anchorEl: i,
+              anchorEl: s,
               anchorOrigin: { vertical: "top", horizontal: "right" },
               id: S,
               keepMounted: !0,
@@ -1148,7 +1150,7 @@
                       children: Object(N.jsx)(Q.a, {
                         badgeContent: 4,
                         color: "secondary",
-                        children: Object(N.jsx)(ce.a, {}),
+                        children: Object(N.jsx)(ae.a, {}),
                       }),
                     }),
                     Object(N.jsx)("p", { children: "Messages" }),
@@ -1176,14 +1178,14 @@
                       "aria-controls": "primary-search-account-menu",
                       "aria-haspopup": "true",
                       color: "inherit",
-                      children: Object(N.jsx)(te.a, {}),
+                      children: Object(N.jsx)(ne.a, {}),
                     }),
                     Object(N.jsx)("p", { children: "Profile" }),
                   ],
                 }),
               ],
             }),
-            B = Object(c.useContext)(Ae),
+            B = Object(c.useContext)(Be),
             E = Object(r.a)(B, 2),
             P = E[0];
           E[1];
@@ -1193,39 +1195,39 @@
               children: Object(N.jsxs)("div", {
                 className: (e.grow, e.root),
                 children: [
-                  Object(N.jsx)(de.a, {}),
+                  Object(N.jsx)(be.a, {}),
                   Object(N.jsx)(G.a, {
                     position: "fixed",
-                    className: Object(oe.a)(
+                    className: Object(le.a)(
                       e.appBar,
-                      Object(U.a)({}, e.appBarShift, k)
+                      Object(U.a)({}, e.appBarShift, y)
                     ),
                     id: "navbar2",
                     children: " ",
                   }),
-                  Object(N.jsxs)(_.a, {
+                  Object(N.jsxs)(J.a, {
                     children: [
                       Object(N.jsx)(G.a, {
                         position: "fixed",
                         id: "navbar",
-                        children: Object(N.jsxs)(_.a, {
+                        children: Object(N.jsxs)(J.a, {
                           id: "navbar",
                           children: [
                             Object(N.jsx)(m.a, {
                               color: "inherit",
                               "aria-label": "open drawer",
                               onClick: function () {
-                                y(!0);
+                                k(!0);
                               },
                               edge: "start",
-                              className: Object(oe.a)(
+                              className: Object(le.a)(
                                 e.menuButton,
-                                k && e.hide
+                                y && e.hide
                               ),
-                              children: Object(N.jsx)(X.a, {}),
+                              children: Object(N.jsx)($.a, {}),
                             }),
                             Object(N.jsx)("img", {
-                              src: V,
+                              src: D,
                               alt: "",
                               id: "Logo",
                             }),
@@ -1300,15 +1302,18 @@
                               children: [
                                 Object(N.jsx)("div", {
                                   className: e.searchIcon,
-                                  children: Object(N.jsx)(Z.a, {}),
+                                  children: Object(N.jsx)(ee.a, {
+                                    className: "headerSearch",
+                                  }),
                                 }),
-                                Object(N.jsx)(J.a, {
+                                Object(N.jsx)(K.a, {
                                   placeholder: "Search\u2026",
                                   classes: {
                                     root: e.inputRoot,
                                     input: e.inputInput,
                                   },
                                   inputProps: { "aria-label": "search" },
+                                  className: "headerSearch",
                                 }),
                               ],
                             }),
@@ -1322,7 +1327,7 @@
                                   children: Object(N.jsx)(Q.a, {
                                     badgeContent: 4,
                                     color: "secondary",
-                                    children: Object(N.jsx)(ce.a, {}),
+                                    children: Object(N.jsx)(ae.a, {}),
                                   }),
                                 }),
                                 Object(N.jsx)(m.a, {
@@ -1341,7 +1346,7 @@
                                   "aria-haspopup": "true",
                                   onClick: O,
                                   color: "inherit",
-                                  children: Object(N.jsx)(te.a, {}),
+                                  children: Object(N.jsx)(ne.a, {}),
                                 }),
                               ],
                             }),
@@ -1355,7 +1360,7 @@
                                   b(e.currentTarget);
                                 },
                                 color: "inherit",
-                                children: Object(N.jsx)(re.a, {}),
+                                children: Object(N.jsx)(oe.a, {}),
                               }),
                             }),
                           ],
@@ -1365,69 +1370,136 @@
                       C,
                     ],
                   }),
-                  Object(N.jsxs)(je.a, {
+                  Object(N.jsxs)(de.a, {
                     className: e.drawer,
                     variant: "persistent",
                     anchor: "left",
-                    open: k,
+                    open: y,
                     classes: { paper: e.drawerPaper },
                     children: [
                       Object(N.jsx)("div", {
                         className: e.drawerHeader,
                         children: Object(N.jsx)(m.a, {
                           onClick: function () {
-                            y(!1);
+                            k(!1);
                           },
                           children:
                             "ltr" === g.direction
-                              ? Object(N.jsx)(Oe.a, {})
-                              : Object(N.jsx)(pe.a, {}),
+                              ? Object(N.jsx)(me.a, {})
+                              : Object(N.jsx)(xe.a, {}),
                         }),
                       }),
-                      Object(N.jsx)(ue.a, {}),
-                      Object(N.jsx)(be.a, {
-                        children: [
-                          "Inbox",
-                          "Starred",
-                          "Send email",
-                          "Drafts",
-                        ].map(function (e, t) {
+                      Object(N.jsx)(he.a, {}),
+                      Object(N.jsx)(ue.a, {
+                        children: [" "].map(function (e, t) {
                           return Object(N.jsxs)(
-                            xe.a,
+                            fe.a,
                             {
                               button: !0,
                               children: [
-                                Object(N.jsx)(fe.a, {
-                                  children:
-                                    t % 2 === 0
-                                      ? Object(N.jsx)(Ne.a, {})
-                                      : Object(N.jsx)(ce.a, {}),
+                                Object(N.jsx)(ge.a, {
+                                  children: Object(N.jsx)("nav", {
+                                    children: Object(N.jsx)(o.b, {
+                                      to: "/home",
+                                      className: "login",
+                                      children: "COMPITION",
+                                    }),
+                                  }),
                                 }),
-                                Object(N.jsx)(ge.a, { primary: e }),
+                                Object(N.jsx)(ve.a, { primary: e }),
                               ],
                             },
                             e
                           );
                         }),
                       }),
-                      Object(N.jsx)(ue.a, {}),
-                      Object(N.jsx)(be.a, {
+                      Object(N.jsx)(ue.a, {
+                        children: [" "].map(function (e, t) {
+                          return Object(N.jsxs)(
+                            fe.a,
+                            {
+                              button: !0,
+                              children: [
+                                Object(N.jsx)(ge.a, {
+                                  children: Object(N.jsx)("nav", {
+                                    children: Object(N.jsx)(o.b, {
+                                      to: "/Admin",
+                                      className: "login",
+                                      children: "ADMIN",
+                                    }),
+                                  }),
+                                }),
+                                Object(N.jsx)(ve.a, { primary: e }),
+                              ],
+                            },
+                            e
+                          );
+                        }),
+                      }),
+                      Object(N.jsx)(ue.a, {
+                        children: [" "].map(function (e, t) {
+                          return Object(N.jsxs)(
+                            fe.a,
+                            {
+                              button: !0,
+                              children: [
+                                Object(N.jsx)(ge.a, {
+                                  children: Object(N.jsx)("nav", {
+                                    children: Object(N.jsx)(o.b, {
+                                      to: "/Orders",
+                                      className: "login",
+                                      children: "Orders",
+                                    }),
+                                  }),
+                                }),
+                                Object(N.jsx)(ve.a, { primary: e }),
+                              ],
+                            },
+                            e
+                          );
+                        }),
+                      }),
+                      Object(N.jsx)(ue.a, {
+                        children: [" "].map(function (e, t) {
+                          return Object(N.jsxs)(
+                            fe.a,
+                            {
+                              button: !0,
+                              children: [
+                                Object(N.jsx)(ge.a, {
+                                  children: Object(N.jsx)("nav", {
+                                    children: Object(N.jsx)(o.b, {
+                                      to: "/addBook",
+                                      className: "login",
+                                      children: "ADDBOOK",
+                                    }),
+                                  }),
+                                }),
+                                Object(N.jsx)(ve.a, { primary: e }),
+                              ],
+                            },
+                            e
+                          );
+                        }),
+                      }),
+                      Object(N.jsx)(he.a, {}),
+                      Object(N.jsx)(ue.a, {
                         children: ["All mail", "Trash", "Spam"].map(function (
                           e,
                           t
                         ) {
                           return Object(N.jsxs)(
-                            xe.a,
+                            fe.a,
                             {
                               button: !0,
                               children: [
-                                Object(N.jsx)(fe.a, {
+                                Object(N.jsx)(ge.a, {
                                   children:
                                     t % 2 === 0
-                                      ? Object(N.jsx)(Ne.a, {})
-                                      : Object(N.jsx)(ce.a, {}),
+                                      ? Object(N.jsx)(we.a, {})
+                                      : Object(N.jsx)(ae.a, {}),
                                 }),
-                                Object(N.jsx)(ge.a, { primary: e }),
+                                Object(N.jsx)(ve.a, { primary: e }),
                               ],
                             },
                             e
@@ -1441,14 +1513,14 @@
             })
           );
         },
-        Se = n(100),
-        Ce = function (e) {
+        Ce = n(100),
+        Ie = function (e) {
           var t = e.children,
-            n = Object(Se.a)(e, ["children"]),
-            a = Object(c.useContext)(Ae),
-            i = Object(r.a)(a, 2),
-            s = i[0];
-          i[1];
+            n = Object(Ce.a)(e, ["children"]),
+            a = Object(c.useContext)(Be),
+            s = Object(r.a)(a, 2),
+            i = s[0];
+          s[1];
           return Object(N.jsx)(
             l.b,
             Object(q.a)(
@@ -1457,7 +1529,7 @@
               {
                 render: function (e) {
                   var n = e.location;
-                  return s.email
+                  return i.email
                     ? t
                     : Object(N.jsx)(l.a, {
                         to: { pathname: "/login", state: { from: n } },
@@ -1467,20 +1539,17 @@
             )
           );
         },
-        Ie = function () {
-          var e = Object(c.useContext)(Ae),
+        Ae = function () {
+          var e = Object(c.useContext)(Be),
             t = Object(r.a)(e, 2),
             n = t[0],
             a = (t[1], Object(c.useState)([])),
-            i = Object(r.a)(a, 2),
-            s = i[0],
-            o = i[1];
+            s = Object(r.a)(a, 2),
+            i = s[0],
+            o = s[1];
           return (
             Object(c.useEffect)(function () {
-              fetch(
-                "https://quiet-springs-03889.herokuapp.com/orders?email=" +
-                  n.email
-              )
+              fetch("http://localhost:5055/orders?email=" + n.email)
                 .then(function (e) {
                   return e.json();
                 })
@@ -1519,7 +1588,7 @@
                       }),
                     ],
                   }),
-                  s.map(function (e) {
+                  i.map(function (e) {
                     var t, n;
                     return Object(N.jsxs)("div", {
                       className: "row text-justify",
@@ -1557,42 +1626,42 @@
             })
           );
         },
-        Ae = Object(c.createContext)();
-      var Be = function () {
+        Be = Object(c.createContext)();
+      var Ee = function () {
         var e = Object(c.useState)({}),
           t = Object(r.a)(e, 2),
           n = t[0],
           a = t[1];
-        return Object(N.jsx)(Ae.Provider, {
+        return Object(N.jsx)(Be.Provider, {
           value: [n, a],
           children: Object(N.jsxs)(o.a, {
             children: [
-              Object(N.jsx)(ye, {}),
+              Object(N.jsx)(Se, {}),
               Object(N.jsxs)(l.d, {
                 children: [
                   Object(N.jsx)(l.b, {
                     path: "/home",
                     children: Object(N.jsx)(S, {}),
                   }),
-                  Object(N.jsx)(Ce, {
+                  Object(N.jsx)(Ie, {
                     path: "/Admin",
                     children: Object(N.jsx)(I, {}),
                   }),
-                  Object(N.jsx)(Ce, {
+                  Object(N.jsx)(Ie, {
                     path: "/addBook",
                     children: Object(N.jsx)(P, {}),
                   }),
                   Object(N.jsx)(l.b, {
                     path: "/login",
-                    children: Object(N.jsx)(F, {}),
+                    children: Object(N.jsx)(V, {}),
                   }),
-                  Object(N.jsx)(Ce, {
+                  Object(N.jsx)(Ie, {
                     path: "/book/:bookId",
-                    children: Object(N.jsx)(R, {}),
+                    children: Object(N.jsx)(z, {}),
                   }),
-                  Object(N.jsx)(Ce, {
+                  Object(N.jsx)(Ie, {
                     path: "/Orders",
-                    children: Object(N.jsx)(Ie, {}),
+                    children: Object(N.jsx)(Ae, {}),
                   }),
                   Object(N.jsx)(l.b, {
                     exact: !0,
@@ -1613,8 +1682,8 @@
           )
       );
       n(150);
-      s.a.render(
-        Object(N.jsx)(a.a.StrictMode, { children: Object(N.jsx)(Be, {}) }),
+      i.a.render(
+        Object(N.jsx)(a.a.StrictMode, { children: Object(N.jsx)(Ee, {}) }),
         document.getElementById("root")
       ),
         "serviceWorker" in navigator &&
@@ -1629,4 +1698,4 @@
   },
   [[151, 1, 2]],
 ]);
-//# sourceMappingURL=main.df85ac07.chunk.js.map
+//# sourceMappingURL=main.4fb6171c.chunk.js.map

@@ -60,10 +60,10 @@ export default function BookCart({ book }) {
           <AttachMoneyIcon />: {book?.AddEvents?.cost}
         </IconButton>
         <Button
-          className=" vehicleBtn ml-5 pr-5 pl-5"
+          className=" ml-5 pr-5 pl-5"
           onClick={() => handleBook(_id)}
           variant="contained"
-          color="primary"
+          id="vehicleBtn"
         >
           Buy Now
         </Button>

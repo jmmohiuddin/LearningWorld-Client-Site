@@ -266,7 +266,7 @@ const Header = () => {
               >
                 <MenuIcon />
               </IconButton>
-              <img src={logo} alt="" id="Logo" />
+              <img src={logo} alt="" id="Logo" className="logoHeader" />
               <Typography className={classes.title} variant="h6" noWrap>
                 Learning World
               </Typography>
@@ -293,15 +293,22 @@ const Header = () => {
               </Typography>
               <Typography className={classes.title} variant="h6" noWrap>
                 <nav>
-                  <Link to="/Admin" className="login">
-                    ADMIN
+                  <Link to="/Contact" className="login">
+                    CONTACT
                   </Link>
                 </nav>
               </Typography>
               <Typography className={classes.title} variant="h6" noWrap>
                 <nav>
                   <Link to="/Contact" className="login">
-                    CONTACT
+                    ARTICLE
+                  </Link>
+                </nav>
+              </Typography>
+              <Typography className={classes.title} variant="h6" noWrap>
+                <nav>
+                  <Link to="/Admin" className="login" id="Admin">
+                    ADMIN
                   </Link>
                 </nav>
               </Typography>
@@ -309,7 +316,6 @@ const Header = () => {
                 <div className={classes.searchIcon}>
                   <SearchIcon className="headerSearch" />
                 </div>
-
                 <InputBase
                   placeholder="Search…"
                   classes={{

@@ -49,6 +49,7 @@
 
 .login{
   margin-right: none!important;
+  margin-left: 8px;
 }
 nav h5 {
 }
@@ -62,8 +63,12 @@ nav a:hover {
 #Logo {
     width: 30px;
 }
+#Admin{
+  padding-right: 150px;
+}
 @media only screen and (max-width: 500px) {
   .headerSearch {
     display: none!important;
   }
 }
+.logoHeader{margin-right:10px;}

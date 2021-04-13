@@ -9,14 +9,18 @@ import Book from "./components/Book/Book";
 import Header from "./components/Header/Header";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Orders from "./components/Orders/Orders";
+import LandingPage from "./components/LandingPage/LandingPage";
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-        <Header />
+        {/* <LandingPage /> */}
         <Switch>
+          <Route path="/Landing">
+            <LandingPage />
+          </Route>
           <Route path="/home">
             <Home />
           </Route>
@@ -36,7 +40,7 @@ function App() {
             <Orders />
           </PrivateRoute>
           <Route exact path="/">
-            <Home />
+            <LandingPage />
           </Route>
         </Switch>
       </Router>

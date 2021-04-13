@@ -18,7 +18,10 @@ import {
 } from "./LoginManager";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
-
+import Header from "../Header/Header";
+console.log(signInWithEmailAndPassword.error);
+console.log(signInWithEmailAndPassword.err);
+// console.log(signInWithEmailAndPassword.newUser.error);
 function Login() {
   const [newUser, setNewUser] = useState(false);
   const [user, setUser] = useState({
@@ -71,9 +74,9 @@ function Login() {
       isFieldValid = isPasswordValid && passwordHasNumber;
     }
     if (isFieldValid) {
-      const newUserInfo = { ...user };
-      newUserInfo[e.target.name] = e.target.value;
-      setUser(newUserInfo);
+      const newUser = { ...user };
+      newUser[e.target.name] = e.target.value;
+      setUser(newUser);
     }
   };
   const handleSubmit = (e) => {
@@ -98,12 +101,13 @@ function Login() {
   };
   return (
     <>
-      <img src={logo} alt="" className="logo" />
-      <section className="container-md LoginSection">
-        <section className="row">
+      <Header></Header>
+      <section className="container-md containersed">
+        <img src={logo} alt="" className="logo" />
+        <div className="row">
           <div
-            className=" mt-5 LoginSectionForm d-block"
-            id="main col-sm-12 col-md-6"
+            className=" mt-5 LoginSectionForm "
+            id="main col-sm-12 col-md-6 col-lg-6"
           >
             {newUser ? (
               <h1 className="LoginSectionTitle">Create an account</h1>
@@ -165,6 +169,7 @@ function Login() {
                 value={newUser ? "sign up" : "sign in"}
                 className="signupSignInBtn mb-3"
               />
+              <p style={{ color: "red" }}>{user.error}</p>
               <br />
               {newUser ? (
                 <p></p>
@@ -181,35 +186,32 @@ function Login() {
                 </p>
               )}
             </form>
-            <p style={{ color: "red" }}>{user.error}</p>
             {user.success && (
               <p style={{ color: "green" }}>
                 User {newUser ? "created" : "login"} successfully
               </p>
             )}
-            <div className="mt-5 ">
-              {user.isSignIn ? (
-                <button onClick={signOut}>
-                  <FontAwesomeIcon icon={faGoogle} />
-                  sign out
-                </button>
-              ) : (
-                <button onClick={googleSignIn} className="gBtn">
-                  <FontAwesomeIcon icon={faGoogle} />
-                  sign in With Google
-                </button>
-              )}
-              <br />
-              <button onClick={fbSignIn} className="fbBtn">
-                <FontAwesomeIcon icon={faFacebookSquare} />
-                Sign in using Facebook{" "}
+            {user.isSignIn ? (
+              <button onClick={signOut}>
+                <FontAwesomeIcon icon={faGoogle} />
+                sign out
               </button>
-            </div>
+            ) : (
+              <button onClick={googleSignIn} className="gBtn">
+                <FontAwesomeIcon icon={faGoogle} />
+                Sign in With Google
+              </button>
+            )}
+            <br />
+            <button onClick={fbSignIn} className="fbBtn">
+              <FontAwesomeIcon icon={faFacebookSquare} />
+              Sign in using Facebook{" "}
+            </button>
           </div>
-          <div className="LoginSectionImage col-sm-12 col-md-6 container-md">
-            <img src={image3} alt=""></img>
+          <div className="LoginSectionImage col-sm-12 col-md-6 col-lg-6">
+            <img src={image3} alt="" className="img-fluid"></img>
           </div>
-        </section>
+        </div>
       </section>
     </>
   );
