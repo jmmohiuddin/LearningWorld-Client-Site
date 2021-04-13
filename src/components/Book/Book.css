@@ -2,6 +2,13 @@
   width: 60%;
   border: 1px solid gray;
   margin-top: 150px;
+  background-color: rgb(103, 230, 80);
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -ms-border-radius:5px;
+  -o-border-radius:5px;
+  padding: 20px;
 }
 
 .costContainer {
@@ -10,6 +17,7 @@
 
 .bookDetailsContainer h4 {
   margin-right: 278px;
+  
 }
 
 .bookDetailsContainer input {
@@ -20,3 +28,6 @@
 .submit {
   margin-left: 17px;
 }
+
+
+

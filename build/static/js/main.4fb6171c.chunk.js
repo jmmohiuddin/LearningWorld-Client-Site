@@ -123,7 +123,7 @@
             a = t[1];
           return (
             Object(c.useEffect)(function () {
-              fetch("http://localhost:5055/events")
+              fetch("https://quiet-springs-03889.herokuapp.com/events")
                 .then(function (e) {
                   return e.json();
                 })
@@ -188,7 +188,9 @@
                       return (
                         (e = t._id),
                         void fetch(
-                          "http://localhost:5055/deleteEvent/".concat(e),
+                          "https://quiet-springs-03889.herokuapp.com/deleteEvent/".concat(
+                            e
+                          ),
                           { method: "DELETE" }
                         )
                           .then(function (e) {
@@ -215,7 +217,7 @@
               a = t[1];
             return (
               Object(c.useEffect)(function () {
-                fetch("http://localhost:5055/events")
+                fetch("https://quiet-springs-03889.herokuapp.com/events")
                   .then(function (e) {
                     return e.json();
                   })
@@ -308,11 +310,14 @@
                 Object(N.jsxs)("form", {
                   onSubmit: n(function (e) {
                     var t = { imageURL: i, AddEvents: e };
-                    fetch("http://localhost:5055/addEvent", {
-                      method: "POST",
-                      headers: { "content-type": "application/json" },
-                      body: JSON.stringify(t),
-                    }).then(function (e) {
+                    fetch(
+                      "https://quiet-springs-03889.herokuapp.com/addEvent",
+                      {
+                        method: "POST",
+                        headers: { "content-type": "application/json" },
+                        body: JSON.stringify(t),
+                      }
+                    ).then(function (e) {
                       return console.log("server side response", e);
                     });
                   }),
@@ -741,7 +746,7 @@
               w = v[0],
               y = v[1];
             Object(c.useEffect)(function () {
-              fetch("http://localhost:5055/events")
+              fetch("https://quiet-springs-03889.herokuapp.com/events")
                 .then(function (e) {
                   return e.json();
                 })
@@ -757,7 +762,10 @@
                   });
             return (
               Object(c.useEffect)(function () {
-                fetch("http://localhost:5055/orders?email=" + m.email)
+                fetch(
+                  "https://quiet-springs-03889.herokuapp.com/orders?email=" +
+                    m.email
+                )
                   .then(function (e) {
                     return e.json();
                   })
@@ -879,11 +887,16 @@
                                 {},
                                 { orderTime: new Date() }
                               );
-                              fetch("http://localhost:5055/addOrder", {
-                                method: "POST",
-                                headers: { "Content-Type": "application/json" },
-                                body: JSON.stringify(t),
-                              })
+                              fetch(
+                                "https://quiet-springs-03889.herokuapp.com/addOrder",
+                                {
+                                  method: "POST",
+                                  headers: {
+                                    "Content-Type": "application/json",
+                                  },
+                                  body: JSON.stringify(t),
+                                }
+                              )
                                 .then(function (e) {
                                   return e.json();
                                 })
@@ -1549,7 +1562,10 @@
             o = s[1];
           return (
             Object(c.useEffect)(function () {
-              fetch("http://localhost:5055/orders?email=" + n.email)
+              fetch(
+                "https://quiet-springs-03889.herokuapp.com/orders?email=" +
+                  n.email
+              )
                 .then(function (e) {
                   return e.json();
                 })

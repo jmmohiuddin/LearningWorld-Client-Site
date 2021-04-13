@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../../App";
+import Orders from "../Orders/Orders";
+import Header from "../Header/Header";
 import "./Book.css";
 const Book = () => {
   const { bookId } = useParams();
@@ -15,7 +17,7 @@ const Book = () => {
       ...loggedInUser,
       orderTime: new Date(),
     };
-    fetch("http://localhost:5055/addOrder", {
+    fetch("https://quiet-springs-03889.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(orderDetails),
@@ -29,52 +31,31 @@ const Book = () => {
   };
   const [book, setBook] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5055/events")
+    fetch("https://quiet-springs-03889.herokuapp.com/events")
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, []);
   const books = book?.find((book) => book?._id === bookId);
   useEffect(() => {
-    fetch("http://localhost:5055/orders?email=" + loggedInUser.email)
+    fetch(
+      "https://quiet-springs-03889.herokuapp.com/orders?email=" +
+        loggedInUser.email
+    )
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);
   console.log(loggedInUser);
   return (
     <>
+      <Header></Header>
       {newUser ? (
-        <section className="container-md">
-          <div className="row mt-5 mb-5">
-            <div className=" col-4">
-              <b>
-                <h3>Book Name</h3>
-              </b>
-            </div>
-            <div className=" col-4">
-              <b>
-                <h3> Author Name</h3>
-              </b>
-            </div>
-            <div className=" col-4">
-              <b>
-                <h3>Price</h3>
-              </b>
-            </div>
-          </div>
-          {events.map((book) => (
-            <div className="row text-justify">
-              <p className="col-4">{book?.shipment?.bookName}</p>
-              <p className="col-4">{book?.name}</p>
-              <p className="col-4">{book?.shipment?.cost}</p>
-            </div>
-          ))}
-        </section>
+        <Orders></Orders>
       ) : (
         <section className="bookingContainer container-md">
           <div className="bookDetailsContainer">
             <h3>Checkout</h3>
             <button
-              className="btn btn-primary"
+              className="btn btn-primary mb-3"
               onClick={() => setNewUser(!newUser)}
             >
               View Order
@@ -84,7 +65,7 @@ const Book = () => {
                 readOnly
                 type="text"
                 className="col-4 text-center"
-                defaultValue="Description"
+                defaultValue="Name"
               />
               <input
                 readOnly
@@ -133,7 +114,7 @@ const Book = () => {
               <input
                 type="submit"
                 value="Checkout"
-                className="btn btn-primary submit"
+                className="btn btn-primary submit mt-3"
               />
             </form>
           </div>
